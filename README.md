@@ -14,6 +14,22 @@
 run your unit tests with `dotnet test`
 run your console app with `dotnet run --project Calculator.Console`
 
+## The Big idea
+
+We made this project to compare and contrast manual and continuous integration workflows for developing an example app. 
+
+### Manual workflow
+
+The "prodmaster" does `git checkout prod` and then does `git merge origin/<person 1>` ... to integrate the team's changes from pull requests. When `dotnet test` shows all passing tests they push to the prod branch and make a release. This is still a fairly rigorous workflow compared to what you might find in a small company.
+
+### Continuous Integration
+
+The "prodmaster" uses the recommended dotnet workflow with github actions to add a workflow that merges to the prod branch automatically when a push is done on another branch and all of the tests pass.  
+
+![recommended workflow](/READMEImages/RecommendedWorkflows.PNG)
+
+Developers get the workflow on their branch and when they push to their branch the workflow is run to integrate with prod. If the tests pass the code is merged on to the prod branch. Prod is built and deployed either manually or automatically when a release is required. A company might combine this with cohort based testing and google analytics to deploy a new release each day and send an expanding cohort to the new release depending on the metrics selected for improvement.
+
 ## The making of this scaffold
 
 I followed [this tutorial](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test).
@@ -27,3 +43,9 @@ I followed [this tutorial](https://learn.microsoft.com/en-us/dotnet/core/testing
 1. `dotnet new console -o Calculator.Console`
 1. `dotnet sln add ./Calculator.Console/Calculator.Console.csproj`
 1. `dotnet add ./Calculator.Console/Calculator.Console.csproj reference ./Calculator/Calculator.csproj`
+
+Thank-you for reading right to the end. Please submit an issue to this repository if you find something. I have also turned on discussion so that you can create a thread there as you deem appropriate as well.
+
+Thanks again
+
+Rich
