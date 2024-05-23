@@ -49,3 +49,26 @@ Thank-you for reading right to the end. Please submit an issue to this repositor
 Thanks again
 
 Rich
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Added by Glaucia on May 23rd, 2024. 
+
+To run this project with unit tests:
+
+To run:
+
+dotnet run --project .\Calculator.Console.csproj
+
+To test:
+
+dotnet test
+
+To test with coverage:  (in folder where .sln file is:)
+
+dotnet test --collect:"XPlat Code Coverage"
+
+Then to make a report:
+
+dotnet tool install --global dotnet-reportgenerator-globaltool
+>> ~/.dotnet/tools/reportgenerator -reports:.\Calculator.Tests\TestResults\c5836b98-69da-49ba-a7ed-501b6abb994e\coverage.cobertura.xml -targetdir:reports
