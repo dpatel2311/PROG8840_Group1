@@ -16,6 +16,10 @@ switch(OptionChoice){
         float Sum = Evaluator.Eval("+", Number1Converted, Number2Converted);
         Console.WriteLine($"{Number1Converted} + {Number2Converted} = {Sum}");
         break;
+    case "2":
+        float Subtract = Evaluator.Eval("+", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted} - {Number2Converted} = {Sum}");
+        break;
     case "3":
         float Product = Evaluator.Eval("*", Number1Converted, Number2Converted);
         Console.WriteLine($"{Number1Converted} * {Number2Converted} = {Product}");
