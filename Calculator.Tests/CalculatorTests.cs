@@ -17,6 +17,10 @@ public class CalculatorTests
     {
         Assert.Equal(6L, Multiply.Eval(2L, 3L));
     }
+    public void TestDivd()
+    {
+        Assert.Equal(4L, Divide.Eval(12L, 3L));
+    }
     [Fact]
     public void TestAddOperation()
     {
@@ -32,5 +36,9 @@ public class CalculatorTests
     {
         Assert.Equal(12, Evaluator.Eval("*", 6, 2));
     }
-
+    [Fact]
+    public void TestDivideOperation()
+    {
+        Assert.Equal(3, Evaluator.Eval("/", 6, 2));
+    }
 }

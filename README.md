@@ -58,7 +58,7 @@ To run this project with unit tests:
 
 To run:
 
-dotnet run --project .\Calculator.Console.csproj
+dotnet run --project .\Calculator.Console\Calculator.Console.csproj
 
 To test:
 
