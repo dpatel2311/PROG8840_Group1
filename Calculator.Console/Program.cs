@@ -1,61 +1,77 @@
 ﻿using Calculator;
-
 Prompts.PrintWelcomeMenu();
-Prompts.PrintOptions();
-Console.WriteLine("Enter operation number: ");
-string? OptionChoice = Console.ReadLine();
-Console.WriteLine("Enter number 1: ");
-string? Number1 = Console.ReadLine();
-Console.WriteLine("Enter number 2: ");
-string? Number2 = Console.ReadLine();
 
-
-//
-
-/*
-FloatValidator validator = new FloatValidator();
-float number;
-
-try
+while (true)
 {
-    if (validator.TryParseFloat(Number1, out number))
+    myloop:
+    Prompts.PrintOptions();
+    Console.WriteLine("Enter operation number: ");
+    string? OptionChoice = Console.ReadLine();
+
+    if (OptionChoice.Equals("1") || OptionChoice.Equals("2") || OptionChoice.Equals("3") || OptionChoice.Equals("4") || OptionChoice.Equals("5"))
     {
-        //        float Number1Converted = float.Parse(Number1);
-        Console.WriteLine($"The string '{Number1}' is a valid float. Parsed value: {number}");
-        Number1Converted = float.Parse(Number1);
+        if (OptionChoice.Equals("5"))
+        {
+            Console.WriteLine("Exiting gracefully");
+            Environment.Exit(0);
+            break;
+        }        
     }
     else
     {
-        Console.WriteLine($"The string '{Number1}' is not a valid float.");
+        Console.WriteLine("Invalid option chosen, read options carefully and enter again");
+     goto myloop;
     }
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"An error occurred: {ex.Message}");
-}
 
-//
-//
-*/
-float Number1Converted = float.Parse(Number1);
-float Number2Converted = float.Parse(Number2);
-switch(OptionChoice){
-    case "1":
-        float Sum = Evaluator.Eval("+", Number1Converted, Number2Converted);
-        Console.WriteLine($"{Number1Converted} + {Number2Converted} = {Sum}");
-        break;
-    case "2":
-        float Subtract = Evaluator.Eval("-", Number1Converted, Number2Converted);
-        Console.WriteLine($"{Number1Converted} - {Number2Converted} = {Subtract}");
-        break;
-    case "3":
-        float Product = Evaluator.Eval("*", Number1Converted, Number2Converted);
-        Console.WriteLine($"{Number1Converted} * {Number2Converted} = {Product}");
-        break;
-    case "4":
-        float Division = Evaluator.Eval("/", Number1Converted, Number2Converted);
-        Console.WriteLine($"{Number1Converted} / {Number2Converted} = {Division}");
-        break;
-    default:
-        throw new Exception("unimplemented");
+    float Number1Converted, Number2Converted;
+    Console.WriteLine("Enter number 1: ");
+    string? Number1 = Console.ReadLine();
+
+    if (!float.TryParse(Number1, out Number1Converted))
+    {
+        Console.WriteLine("You had entered invalid input for number 1, enter valid inputs");
+        goto myloop;
+    }
+    Console.WriteLine("Enter number 2: ");
+    string? Number2 = Console.ReadLine();
+    if (!float.TryParse(Number2, out Number2Converted))
+    {
+        Console.WriteLine("You had entered invalid input for number 2, enter valid inputs");
+        goto myloop;
+    }
+//    float Number1Converted = float.Parse(Number1);
+  //  float Number2Converted = float.Parse(Number2);
+    switch (OptionChoice)
+    {
+        case "1":
+            float Sum = Evaluator.Eval("+", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for addition is as below");
+            Console.WriteLine($"{Number1Converted} + {Number2Converted} = {Sum}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "2":
+            float Subtract = Evaluator.Eval("-", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for subtraction is as below");
+            Console.WriteLine($"{Number1Converted} - {Number2Converted} = {Subtract}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "3":
+            float Product = Evaluator.Eval("*", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for multiplication is as below");
+            Console.WriteLine($"{Number1Converted} * {Number2Converted} = {Product}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "4":
+            float Division = Evaluator.Eval("/", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for division is as below");
+            Console.WriteLine($"{Number1Converted} / {Number2Converted} = {Division}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        default:
+            throw new Exception("unimplemented");
+    }
 }

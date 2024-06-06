@@ -8,6 +8,11 @@ public class CalculatorTests
         Assert.Equal(6L, Add.Eval(1L, 5L));
     }
     [Fact]
+    public void TestAddInvalid()
+    {
+        Assert.Equal(2, Add.Eval(1L, 0L));
+    }
+    [Fact]
     public void TestSubtract()
     {
         Assert.Equal(4L, Subtract.Eval(12L, 8L));
@@ -40,5 +45,10 @@ public class CalculatorTests
     public void TestDivideOperation()
     {
         Assert.Equal(3, Evaluator.Eval("/", 6, 2));
+    }
+    [Fact]
+    public void TestInvalidOperation()
+    {
+        Assert.Equal(0, Evaluator.Eval("#", 6, 2));
     }
 }
