@@ -8,9 +8,9 @@ while (true)
     Console.WriteLine("Enter operation number: ");
     string? OptionChoice = Console.ReadLine();
 
-    if (OptionChoice.Equals("1") || OptionChoice.Equals("2") || OptionChoice.Equals("3") || OptionChoice.Equals("4") || OptionChoice.Equals("5") || OptionChoice.Equals("6")|| OptionChoice.Equals("7")|| OptionChoice.Equals("8"))
+    if (OptionChoice.Equals("1") || OptionChoice.Equals("2") || OptionChoice.Equals("3") || OptionChoice.Equals("4") || OptionChoice.Equals("5") || OptionChoice.Equals("6")|| OptionChoice.Equals("7")|| OptionChoice.Equals("8") || OptionChoice.Equals("9"))
     {
-        if (OptionChoice.Equals("8"))
+        if (OptionChoice.Equals("9"))
         {
             Console.WriteLine("Exiting gracefully");
             Environment.Exit(0);
@@ -33,7 +33,7 @@ while (true)
         Console.WriteLine("You had entered invalid input for number 1, enter a valid number");
         goto myloop;
     }
-    if (OptionChoice != "5")
+    if (OptionChoice != "5" && OptionChoice != "8")
     { 
         Console.WriteLine("Enter number 2: ");
         string? Number2 = Console.ReadLine();
@@ -94,6 +94,13 @@ while (true)
             float Exponent = Evaluator.Eval("^", Number1Converted, Number2Converted);
             Console.WriteLine("The percentage of first and second no is as below");
             Console.WriteLine($"{Number1Converted} ^ {Number2Converted} = {Exponent}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "8":
+            float Absolute = Evaluator.Eval("$", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for Absolute is as below");
+            Console.WriteLine($"{Number1Converted} $ {Absolute}");
             Console.WriteLine("####################################################");
             Console.WriteLine("Enter new input for calculation from below options");
             break;

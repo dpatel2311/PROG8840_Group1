@@ -24,6 +24,9 @@ namespace Calculator{
                 case "^":
                     result = Exponent.Eval(Operands[0], Operands[1]);
                     break;
+                case "$":
+                    result = Absolute.Eval(Operands[0], Operands[1]);
+                    break;
                 default:
                     throw new Exception("unimplemented");
             }
