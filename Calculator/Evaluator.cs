@@ -15,6 +15,15 @@ namespace Calculator{
                 case "/":
                     result = Divide.Eval(Operands[0], Operands[1]);
                     break;
+                case "@":
+                    result = Square.Eval(Operands[0], Operands[1]);
+                    break;
+                case "%":
+                    result = Percentage.Eval(Operands[0], Operands[1]);
+                    break;
+                case "^":
+                    result = Exponent.Eval(Operands[0], Operands[1]);
+                    break;
                 default:
                     throw new Exception("unimplemented");
             }
