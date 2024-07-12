@@ -29,7 +29,7 @@ while (true)
 
     if (!float.TryParse(Number1, out Number1Converted))
     {
-        Console.WriteLine("You had entered invalid input for number 1, enter valid inputs");
+        Console.WriteLine("You had entered invalid input for number 1, enter valid number");
         goto myloop;
     }
     Console.WriteLine("Enter number 2: ");
