@@ -10,8 +10,10 @@ public class Prompts{
         Console.WriteLine("2. Subtract");
         Console.WriteLine("3. Multiply");
         Console.WriteLine("4. Divide");
-        Console.WriteLine("5. Percentage");
-        Console.WriteLine("6. Exit");
+        Console.WriteLine("5. Square");
+        Console.WriteLine("6. Percentage");
+        Console.WriteLine("7. Exponent");
+        Console.WriteLine("8. Exit ");
     }
 
 }
