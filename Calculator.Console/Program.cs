@@ -77,7 +77,7 @@ while (true)
             Console.WriteLine("Enter new input for calculation from below options");
             break;
         case "5":
-            float Square = Evaluator.Eval("^", Number1Converted, Number2Converted);
+            float Square = Evaluator.Eval("@", Number1Converted, Number2Converted);
             Console.WriteLine("The output for square is as below");
             Console.WriteLine($"{Number1Converted} ^ 2 = {Square}");
             Console.WriteLine("####################################################");
@@ -87,6 +87,13 @@ while (true)
             float Percentage = Evaluator.Eval("%", Number1Converted, Number2Converted);
             Console.WriteLine("The percentage of first and second no is as below");
             Console.WriteLine($"{Number1Converted} % {Number2Converted} = {Percentage}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "7":
+            float Exponent = Evaluator.Eval("^", Number1Converted, Number2Converted);
+            Console.WriteLine("The percentage of first and second no is as below");
+            Console.WriteLine($"{Number1Converted} ^ {Number2Converted} = {Exponent}");
             Console.WriteLine("####################################################");
             Console.WriteLine("Enter new input for calculation from below options");
             break;

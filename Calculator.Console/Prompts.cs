@@ -13,7 +13,8 @@ public class Prompts{
         Console.WriteLine("5. Square");
         Console.WriteLine("6. Percentage");
         Console.WriteLine("7. Exponent");
-        Console.WriteLine("8. Exit ");
+        Console.WriteLine("8. Absolute ");
+        Console.WriteLine("9. Exit ");
     }
 
 }
