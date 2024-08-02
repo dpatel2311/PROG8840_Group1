@@ -221,10 +221,14 @@ var assemblies = [
   {
     "name": "Calculator",
     "classes": [
+      { "name": "Calculator.Absolute", "rp": "Calculator_Absolute.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 12, "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Add", "rp": "Calculator_Add.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Divide", "rp": "Calculator_Divide.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "Calculator.Evaluator", "rp": "Calculator_Evaluator.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 24, "cb": 8, "tb": 8, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Evaluator", "rp": "Calculator_Evaluator.html", "cl": 15, "ucl": 6, "cal": 21, "tl": 36, "cb": 29, "tb": 38, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Exponent", "rp": "Calculator_Exponent.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Multiply", "rp": "Calculator_Multiply.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Percentage", "rp": "Calculator_Percentage.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Square", "rp": "Calculator_Square.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Subtract", "rp": "Calculator_Subtract.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
@@ -234,9 +238,17 @@ var metrics = [{ "name": "Crap Score", "abbreviation": "crp", "explanationUrl": 
 var historicCoverageExecutionTimes = [];
 
 var riskHotspotMetrics = [
+      { "name": "Crap Score", "explanationUrl": "https://googletesting.blogspot.de/2011/02/this-code-is-crap.html" },
+      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
 ];
 
 var riskHotspots = [
+  {
+    "assembly": "Calculator", "class": "Calculator.Evaluator", "reportPath": "Calculator_Evaluator.html", "methodName": "Eval(System.String,System.Single[])", "methodShortName": "Eval(...)", "fileIndex": 0, "line": 3,
+    "metrics": [
+      { "value": 71.71, "exceeded": true },
+      { "value": 38, "exceeded": true },
+    ]},
 ];
 
 var branchCoverageAvailable = true;

@@ -8,9 +8,9 @@ while (true)
     Console.WriteLine("Enter operation number: ");
     string? OptionChoice = Console.ReadLine();
 
-    if (OptionChoice.Equals("1") || OptionChoice.Equals("2") || OptionChoice.Equals("3") || OptionChoice.Equals("4") || OptionChoice.Equals("5") || OptionChoice.Equals("6")|| OptionChoice.Equals("7")|| OptionChoice.Equals("8") || OptionChoice.Equals("9"))
+    if (OptionChoice.Equals("1") || OptionChoice.Equals("2") || OptionChoice.Equals("3") || OptionChoice.Equals("4") || OptionChoice.Equals("5") || OptionChoice.Equals("6")|| OptionChoice.Equals("7")|| OptionChoice.Equals("8") || OptionChoice.Equals("9") || OptionChoice.Equals("10") || OptionChoice.Equals("11") || OptionChoice.Equals("12") || OptionChoice.Equals("13"))
     {
-        if (OptionChoice.Equals("9"))
+        if (OptionChoice.Equals("13"))
         {
             Console.WriteLine("Exiting gracefully");
             Environment.Exit(0);
@@ -33,7 +33,7 @@ while (true)
         Console.WriteLine("You had entered invalid input for number 1, enter a valid number");
         goto myloop;
     }
-    if (OptionChoice != "5" && OptionChoice != "8")
+    if (OptionChoice != "5" && OptionChoice != "8" && OptionChoice != "10" && OptionChoice != "11")
     { 
         Console.WriteLine("Enter number 2: ");
         string? Number2 = Console.ReadLine();
@@ -101,6 +101,27 @@ while (true)
             float Absolute = Evaluator.Eval("$", Number1Converted, Number2Converted);
             Console.WriteLine("The output for Absolute is as below");
             Console.WriteLine($"{Number1Converted} $ {Absolute}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "9":
+            float Round = Evaluator.Eval("~", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for Round function is as below");
+            Console.WriteLine($"{Number1Converted} ~ {Round}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "10":
+            float Factorial = Evaluator.Eval("!", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for Factorial is as below");
+            Console.WriteLine($"{Number1Converted}! = {Factorial}");
+            Console.WriteLine("####################################################");
+            Console.WriteLine("Enter new input for calculation from below options");
+            break;
+        case "11":
+            float Fahrenheit = Evaluator.Eval("`", Number1Converted, Number2Converted);
+            Console.WriteLine("The output for Fahrenheit is as below");
+            Console.WriteLine($"{Number1Converted} = {Fahrenheit} ");
             Console.WriteLine("####################################################");
             Console.WriteLine("Enter new input for calculation from below options");
             break;

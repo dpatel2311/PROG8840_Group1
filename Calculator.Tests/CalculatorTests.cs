@@ -26,6 +26,25 @@ public class CalculatorTests
     {
         Assert.Equal(4L, Divide.Eval(12L, 3L));
     }
+    public void TestSqr()
+    {
+        Assert.Equal(16L, Square.Eval(4L, 1L));
+    }
+    [Fact]
+    public void TestPer()
+    {
+        Assert.Equal(8L, Percentage.Eval(25L, 200L));
+    }
+    [Fact]
+    public void TestAbs()
+    {
+        Assert.Equal(25.0F, Absolute.Eval(-25.0F,-25.0F));
+    }
+    [Fact]
+    public void TestExp()
+    {
+        Assert.Equal(8F, Exponent.Eval(2F, 3F));
+    }
     [Fact]
     public void TestAddOperation()
     {
@@ -45,6 +64,11 @@ public class CalculatorTests
     public void TestDivideOperation()
     {
         Assert.Equal(3, Evaluator.Eval("/", 6, 2));
+    }
+    [Fact]
+    public void TestSuquareOperation()
+    {
+        Assert.Equal(9, Evaluator.Eval("@", 3, 1));
     }
     [Fact]
     public void TestInvalidOperation()
