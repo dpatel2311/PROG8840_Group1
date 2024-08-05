@@ -14,7 +14,11 @@ public class Prompts{
         Console.WriteLine("6. Percentage");
         Console.WriteLine("7. Exponent");
         Console.WriteLine("8. Absolute ");
-        Console.WriteLine("9. Exit ");
+        Console.WriteLine("9. Round-off ");
+        Console.WriteLine("10. Factorial ");
+        Console.WriteLine("11. Celsius to Fahrenheit");
+        Console.WriteLine("12. Clear ");
+        Console.WriteLine("13. Exit ");
     }
 
 }

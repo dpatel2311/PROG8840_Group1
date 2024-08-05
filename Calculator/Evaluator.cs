@@ -27,6 +27,15 @@ namespace Calculator{
                 case "$":
                     result = Absolute.Eval(Operands[0], Operands[1]);
                     break;
+                case "~":
+                    result = Round.Eval(Operands[0], Operands[1]);
+                    break;
+                case "!":
+                    result = Factorial.Eval(Operands[0], Operands[1]);
+                    break;
+                case "`":
+                    result = Fahrenheit.Eval(Operands[0], Operands[1]);
+                    break;
                 default:
                     throw new Exception("unimplemented");
             }
