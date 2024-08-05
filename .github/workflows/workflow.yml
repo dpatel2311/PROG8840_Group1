@@ -1,35 +1,43 @@
 name: GitFlow 1
+
 on:
   push:
     branches:
       - main
+
 permissions:
   contents: write
   pull-requests: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '8.0.x'
-      - name: Install dependencies
-        run: dotnet restore
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
   labeler:
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - name: Labeler
-        uses: actions/labeler@v5
-        with:
-          all:
-            - changed-files:
-                - any-glob-to-any-file: 'src/**/*'
-                - all-globs-to-all-files: '!src/docs/*'
+    - name: Labeler
+      uses: actions/labeler@v5
+#      source:
+#      - all:
+#        - changed-files:
+#          - any-glob-to-any-file: 'src/**/*'
+#          - all-globs-to-all-files: '!src/docs/*'
